@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+/* Carousel container */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.carousel-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards, slideZoomIn 8s ease-in-out infinite alternate;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+/* Fade in animation for images */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Hero text styling */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 1s forwards;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  animation: fadeInUp 1s forwards 0.5s;
+}
+
+/* Buttons */
+.prev-button,
+.next-button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
   color: white;
+  font-weight: bold;
+  font-size: 24px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: background-color 0.6s ease;
+  z-index: 3;
+  transform: translateY(-50%);
 }
 
-.App-link {
-  color: #61dafb;
+.prev-button {
+  left: 10px;
 }
 
-@keyframes App-logo-spin {
+.next-button {
+  right: 10px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* Fade in up for text */
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
