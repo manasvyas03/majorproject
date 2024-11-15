@@ -14,8 +14,7 @@ import './App.css';
 import image1 from './Assets/Background.jpg';
 import image2 from './Assets/appointment.jpg';
 import image3 from './Assets/5815.jpg';
-import image4 from 'D:/Major Project/resources/ai/src/Assets/4962291.jpg';
-import image5 from 'D:/Major Project/resources/ai/src/Assets/consultation.jpg';
+
 
 
 const App = () => {

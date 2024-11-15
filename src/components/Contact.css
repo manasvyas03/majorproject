@@ -115,7 +115,7 @@ button:hover {
   left: -50px;
   width: 300px;
   height: 300px;
-  background: url('D:/Major Project/resources/ai/src/Assets/contact.jpg') no-repeat center;
+  background: url('./contact.jpg') no-repeat center;
   background-size: cover;
   opacity: 0.1;
   z-index: 0;
